@@ -35,6 +35,7 @@ window.addEventListener("load", () => {
 
     const clearButton = document.getElementById("clear");
     clearButton.addEventListener("click", () => {
+        window.navigator.vibrate(100);
         ctx.fillStyle = '#ffffff';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         const result = document.getElementById('result');
