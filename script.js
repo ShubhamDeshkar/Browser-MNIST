@@ -43,6 +43,7 @@ window.addEventListener("load", () => {
 
     // code for mobile ;(
     canvas.addEventListener("touchstart", (e) => {
+        e.preventDefault();
         const touchPoint = e.touches[0];
         canvas.dispatchEvent(new MouseEvent("mousedown", {
             clientX: touchPoint.clientX,
@@ -51,10 +52,12 @@ window.addEventListener("load", () => {
     }, false);
 
     canvas.addEventListener("touchend", (e) => {
+        e.preventDefault();
         canvas.dispatchEvent(new MouseEvent("mouseup", {}));
     }, false);
 
     canvas.addEventListener("touchmove", (e) => {
+        e.preventDefault();
         const touchPoint = e.touches[0];
         canvas.dispatchEvent(new MouseEvent("mousedown", {
             clientX: touchPoint.clientX,
