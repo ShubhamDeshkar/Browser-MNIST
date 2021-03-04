@@ -70,15 +70,15 @@ window.addEventListener("load", () => {
         }
     }
 
-    document.addEventListener("touchstart", (e) => {
+    document.body.addEventListener("touchstart", (e) => {
         preventBrowserdefault(e);
     }, false);
 
-    document.addEventListener("touchend", (e) => {
+    document.body.addEventListener("touchend", (e) => {
         preventBrowserdefault(e);
     }, false);
 
-    document.addEventListener("touchmove", (e) => {
+    document.body.addEventListener("touchmove", (e) => {
         preventBrowserdefault(e);
     }, false);
 })
