@@ -35,8 +35,7 @@ window.addEventListener("load", () => {
 
     const clearButton = document.getElementById("clear");
     clearButton.addEventListener("click", () => {
-        window.navigator.vibrate(100);
-        ctx.fillStyle = '#ffffff';
+        ctx.fillStyle = 'white';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         const result = document.getElementById('result');
         result.innerHTML = "";
@@ -61,5 +60,25 @@ window.addEventListener("load", () => {
             clientX: touchPoint.clientX,
             clientY: touchPoint.clientY
         }));
+    }, false);
+
+    // prevent default behaviour of browser so the whole body
+    // does not move when drawing with finger on canvas
+    preventBrowserdefault = (e) => {
+        if (e === canvas) {
+            e.preventDefault();
+        }
+    }
+
+    document.addEventListener("touchstart", (e) => {
+        preventBrowserdefault(e);
+    }, false);
+
+    document.addEventListener("touchend", (e) => {
+        preventBrowserdefault(e);
+    }, false);
+
+    document.addEventListener("touchmove", (e) => {
+        preventBrowserdefault(e);
     }, false);
 })
