@@ -65,7 +65,7 @@ window.addEventListener("load", () => {
     // prevent default behaviour of browser so the whole body
     // does not move when drawing with finger on canvas
     preventBrowserdefault = (e) => {
-        if (e === canvas) {
+        if (e.target === canvas) {
             e.preventDefault();
         }
     }
