@@ -41,4 +41,25 @@ window.addEventListener("load", () => {
         const result = document.getElementById('result');
         result.innerHTML = "";
     });
+
+    // code for mobile ;(
+    canvas.addEventListener("touchstart", (e) => {
+        const touchPoint = e.touches[0];
+        canvas.dispatchEvent(new MouseEvent("mousedown", {
+            clientX: touchPoint.clientX,
+            clientY: touchPoint.clientY
+        }));
+    }, false);
+
+    canvas.addEventListener("touchend", (e) => {
+        canvas.dispatchEvent(new MouseEvent("mouseup", {}));
+    }, false);
+
+    canvas.addEventListener("touchmove", (e) => {
+        const touchPoint = e.touches[0];
+        canvas.dispatchEvent(new MouseEvent("mousedown", {
+            clientX: touchPoint.clientX,
+            clientY: touchPoint.clientY
+        }));
+    }, false);
 })
