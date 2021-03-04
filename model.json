@@ -1,0 +1,379 @@
+{
+  "format": "layers-model",
+  "generatedBy": "keras v2.4.0",
+  "convertedBy": "TensorFlow.js Converter v3.2.0",
+  "modelTopology": {
+    "keras_version": "2.4.0",
+    "backend": "tensorflow",
+    "model_config": {
+      "class_name": "Sequential",
+      "config": {
+        "name": "sequential",
+        "layers": [
+          {
+            "class_name": "InputLayer",
+            "config": {
+              "batch_input_shape": [
+                null,
+                32,
+                32,
+                1
+              ],
+              "dtype": "float32",
+              "sparse": false,
+              "ragged": false,
+              "name": "C1_input"
+            }
+          },
+          {
+            "class_name": "Conv2D",
+            "config": {
+              "name": "C1",
+              "trainable": true,
+              "batch_input_shape": [
+                null,
+                32,
+                32,
+                1
+              ],
+              "dtype": "float32",
+              "filters": 6,
+              "kernel_size": [
+                5,
+                5
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "valid",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "groups": 1,
+              "activation": "relu",
+              "use_bias": true,
+              "kernel_initializer": {
+                "class_name": "GlorotUniform",
+                "config": {
+                  "seed": null
+                }
+              },
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "kernel_regularizer": null,
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "kernel_constraint": null,
+              "bias_constraint": null
+            }
+          },
+          {
+            "class_name": "AveragePooling2D",
+            "config": {
+              "name": "S2",
+              "trainable": true,
+              "dtype": "float32",
+              "pool_size": [
+                2,
+                2
+              ],
+              "padding": "valid",
+              "strides": [
+                2,
+                2
+              ],
+              "data_format": "channels_last"
+            }
+          },
+          {
+            "class_name": "Conv2D",
+            "config": {
+              "name": "C3",
+              "trainable": true,
+              "dtype": "float32",
+              "filters": 16,
+              "kernel_size": [
+                5,
+                5
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "valid",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "groups": 1,
+              "activation": "relu",
+              "use_bias": true,
+              "kernel_initializer": {
+                "class_name": "GlorotUniform",
+                "config": {
+                  "seed": null
+                }
+              },
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "kernel_regularizer": null,
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "kernel_constraint": null,
+              "bias_constraint": null
+            }
+          },
+          {
+            "class_name": "AveragePooling2D",
+            "config": {
+              "name": "S4",
+              "trainable": true,
+              "dtype": "float32",
+              "pool_size": [
+                2,
+                2
+              ],
+              "padding": "valid",
+              "strides": [
+                2,
+                2
+              ],
+              "data_format": "channels_last"
+            }
+          },
+          {
+            "class_name": "Conv2D",
+            "config": {
+              "name": "C5",
+              "trainable": true,
+              "dtype": "float32",
+              "filters": 120,
+              "kernel_size": [
+                5,
+                5
+              ],
+              "strides": [
+                1,
+                1
+              ],
+              "padding": "valid",
+              "data_format": "channels_last",
+              "dilation_rate": [
+                1,
+                1
+              ],
+              "groups": 1,
+              "activation": "relu",
+              "use_bias": true,
+              "kernel_initializer": {
+                "class_name": "GlorotUniform",
+                "config": {
+                  "seed": null
+                }
+              },
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "kernel_regularizer": null,
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "kernel_constraint": null,
+              "bias_constraint": null
+            }
+          },
+          {
+            "class_name": "Flatten",
+            "config": {
+              "name": "Flatten",
+              "trainable": true,
+              "dtype": "float32",
+              "data_format": "channels_last"
+            }
+          },
+          {
+            "class_name": "Dense",
+            "config": {
+              "name": "F6",
+              "trainable": true,
+              "batch_input_shape": [
+                null,
+                120
+              ],
+              "dtype": "float32",
+              "units": 84,
+              "activation": "relu",
+              "use_bias": true,
+              "kernel_initializer": {
+                "class_name": "GlorotUniform",
+                "config": {
+                  "seed": null
+                }
+              },
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "kernel_regularizer": null,
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "kernel_constraint": null,
+              "bias_constraint": null
+            }
+          },
+          {
+            "class_name": "Dense",
+            "config": {
+              "name": "F7",
+              "trainable": true,
+              "dtype": "float32",
+              "units": 10,
+              "activation": "softmax",
+              "use_bias": true,
+              "kernel_initializer": {
+                "class_name": "GlorotUniform",
+                "config": {
+                  "seed": null
+                }
+              },
+              "bias_initializer": {
+                "class_name": "Zeros",
+                "config": {}
+              },
+              "kernel_regularizer": null,
+              "bias_regularizer": null,
+              "activity_regularizer": null,
+              "kernel_constraint": null,
+              "bias_constraint": null
+            }
+          }
+        ]
+      }
+    },
+    "training_config": {
+      "loss": "mean_squared_error",
+      "metrics": [
+        [
+          {
+            "class_name": "MeanMetricWrapper",
+            "config": {
+              "name": "categorical_accuracy",
+              "dtype": "float32",
+              "fn": "categorical_accuracy"
+            }
+          }
+        ]
+      ],
+      "weighted_metrics": null,
+      "loss_weights": null,
+      "optimizer_config": {
+        "class_name": "SGD",
+        "config": {
+          "name": "SGD",
+          "learning_rate": 0.10000000149011612,
+          "decay": 0.0,
+          "momentum": 0.0,
+          "nesterov": false
+        }
+      }
+    }
+  },
+  "weightsManifest": [
+    {
+      "paths": [
+        "group1-shard1of1.bin"
+      ],
+      "weights": [
+        {
+          "name": "C1/kernel",
+          "shape": [
+            5,
+            5,
+            1,
+            6
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "C1/bias",
+          "shape": [
+            6
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "C3/kernel",
+          "shape": [
+            5,
+            5,
+            6,
+            16
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "C3/bias",
+          "shape": [
+            16
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "C5/kernel",
+          "shape": [
+            5,
+            5,
+            16,
+            120
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "C5/bias",
+          "shape": [
+            120
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "F6/kernel",
+          "shape": [
+            120,
+            84
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "F6/bias",
+          "shape": [
+            84
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "F7/kernel",
+          "shape": [
+            84,
+            10
+          ],
+          "dtype": "float32"
+        },
+        {
+          "name": "F7/bias",
+          "shape": [
+            10
+          ],
+          "dtype": "float32"
+        }
+      ]
+    }
+  ]
+}
