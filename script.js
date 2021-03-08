@@ -64,24 +64,4 @@ window.addEventListener("load", () => {
             clientY: touchPoint.clientY
         }));
     }, false);
-
-    // prevent default behaviour of browser so the whole body
-    // does not move when drawing with finger on canvas
-    preventBrowserdefault = (e) => {
-        if (e.target === canvas) {
-            e.preventDefault();
-        }
-    }
-
-    document.body.addEventListener("touchstart", (e) => {
-        preventBrowserdefault(e);
-    }, false);
-
-    document.body.addEventListener("touchend", (e) => {
-        preventBrowserdefault(e);
-    }, false);
-
-    document.body.addEventListener("touchmove", (e) => {
-        preventBrowserdefault(e);
-    }, false);
 })
